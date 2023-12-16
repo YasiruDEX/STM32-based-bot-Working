@@ -1,0 +1,26 @@
+16:00:27 **** Incremental Build of configuration Debug for project first_test ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/liquidcrystal_i2c.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/liquidcrystal_i2c.d" -MT"Core/Src/liquidcrystal_i2c.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/liquidcrystal_i2c.o"
+../Core/Src/liquidcrystal_i2c.c: In function 'DelayInit':
+../Core/Src/liquidcrystal_i2c.c:273:3: error: 'CoreDebug' undeclared (first use in this function)
+  273 |   CoreDebug->DEMCR &= ~CoreDebug_DEMCR_TRCENA_Msk;
+      |   ^~~~~~~~~
+../Core/Src/liquidcrystal_i2c.c:273:3: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/liquidcrystal_i2c.c:273:24: error: 'CoreDebug_DEMCR_TRCENA_Msk' undeclared (first use in this function)
+  273 |   CoreDebug->DEMCR &= ~CoreDebug_DEMCR_TRCENA_Msk;
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/liquidcrystal_i2c.c:276:3: error: 'DWT' undeclared (first use in this function)
+  276 |   DWT->CTRL &= ~DWT_CTRL_CYCCNTENA_Msk; //~0x00000001;
+      |   ^~~
+../Core/Src/liquidcrystal_i2c.c:276:17: error: 'DWT_CTRL_CYCCNTENA_Msk' undeclared (first use in this function)
+  276 |   DWT->CTRL &= ~DWT_CTRL_CYCCNTENA_Msk; //~0x00000001;
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/liquidcrystal_i2c.c: In function 'DelayUS':
+../Core/Src/liquidcrystal_i2c.c:289:20: error: 'DWT' undeclared (first use in this function)
+  289 |   uint32_t start = DWT->CYCCNT;
+      |                    ^~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/liquidcrystal_i2c.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+
+16:00:28 Build Failed. 6 errors, 0 warnings. (took 505ms)
+
