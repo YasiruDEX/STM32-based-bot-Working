@@ -1,6 +1,6 @@
 # STM32_bot-Working
 
-![Function Generator](Images/IMG_1756.png)
+![STM32](Images/IMG_1756.png)
 
 <H3>An innovative project centered around an STM32-powered robot!</H3>
 
